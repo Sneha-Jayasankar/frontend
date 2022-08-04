@@ -1,0 +1,75 @@
+/*header*/
+.heading{
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:84%;
+    border-radius: 4px;
+    margin: 5px;
+    box-shadow: #fafafa 1px 1px 1px 1px;
+}
+
+.create-emp-span{
+    color: white;
+    background-color: #03AEEE;
+    height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  font-size:xx-large;
+ justify-content: center;
+  align-items: center;
+}
+.create-emp{
+    display: flex;
+    background: #EAF9FF 0% 0% no-repeat padding-box;
+    border-radius: 90px 90px;
+    cursor: pointer;
+    text-decoration: none;
+    color:#1F1F1F;
+}
+.create-emp div{
+    padding: 20px;
+    font-size: 13px;
+}
+.heading select{
+    width:100%;
+    border: none;
+    border-radius: 50px;
+    background-color: #EAF9FF;
+    color: blacks;
+    height: 25px;
+    padding-left: 5px;
+}
+h1{
+    margin-left: 40px;
+}
+
+.filterby{
+    width:100px;
+}
+
+/*entries*/
+
+.list-item-header{
+    background-color:#EAF9FF;
+    width:1550px;
+    margin: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    height:70px;
+    display: flex;
+    box-shadow: 5px;
+    justify-content: space-around;
+    border-radius: 5px;
+    align-items: center;
+    
+}
+.header-field{
+    padding: 30px;
+}
+.field{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,53 @@
+.list-item{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+    margin-top: 12px;
+    margin-bottom:12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    width:1530px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 14px;
+    align-items: center;
+}
+.field{
+    width: 15%
+}
+.icons{
+    width: 10%;
+}
+.active{
+    background-color: #D3F4BE;
+}
+.probation{
+    background-color: #F5ECB8
+}
+.inactive{
+    background-color: #FFBFBF;
+}
+.span-status{
+    border-top-left-radius: 90px 90px;
+    border-bottom-left-radius: 90px 90px;
+    border-top-right-radius: 90px 90px;
+    border-bottom-right-radius: 90px 90px;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+    color: #183072;
+}
+.status{
+ display: flex;
+}
+.delete-icon{
+    color:#FA4242;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+.edit-icon{
+    color:#10AAC0;
+    font-size:1.2rem;
+    margin-left: 5px;
+}
+
+/*colours*/
