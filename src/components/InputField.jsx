@@ -4,12 +4,13 @@ const InputField=({
     placeholder,
     type,
     name,
-    value
+    value,
+    onChange
 })=>{
     return(
         <div>
             <label>{label}</label>
-            <input type={type} id={id} value={value} placeholder={placeholder} name={name} />
+            <input type={type} id={id} value={value} placeholder={placeholder} name={name} onChange={(event) =>onChange(event.target.value)} />
         </div>
     );
 };

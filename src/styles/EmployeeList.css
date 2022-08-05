@@ -61,7 +61,7 @@ h1{
     height:70px;
     display: flex;
     box-shadow: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 5px;
     align-items: center;
     
@@ -72,4 +72,5 @@ h1{
 .field{
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-left: 35px;
 }

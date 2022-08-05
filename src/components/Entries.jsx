@@ -3,8 +3,10 @@ import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 import "../styles/Entries.css";
 
 const Entries = (props) => {
+  const {handleClick}=props;
+  console.log(props)
   return (
-    <div className="list-item">
+    <div className="list-item" onClick={()=>handleClick()}>
       <div className="field">{props.name}</div>
       <div className="field">{props.empId}</div>
       <div className="field">{props.joiningDate}</div>
@@ -15,10 +17,11 @@ const Entries = (props) => {
       <div className="field">{props.experience}</div>
       <div className="field icons">
         <MdOutlineDelete
-          className="delete-icon"
-        />
+          className="delete-icon"/>
+          {/* onClick={()=>handleClick()} */}
         <MdOutlineEdit
           className="edit-icon"
+          // onClick={()=>handleClick()}
         />
       </div>
     </div>

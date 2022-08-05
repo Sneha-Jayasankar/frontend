@@ -1,10 +1,10 @@
 main{
-    position: fixed;
     background-color: #FAFAFA;
     height: 100%;
     width: 100%;
-    top: 70px;
+    margin-top: 70px;
     left: 250px;
+    margin-left: 250px;
     padding: 20px;
 }
 
@@ -17,7 +17,6 @@ main{
     box-shadow: 0px 3px 6px #9D9D9D29;
     border-radius: 10px;
     opacity: 1;
-    justify-content: center;
     /* margin:10px; */
 }
 .header h1 {
@@ -35,11 +34,13 @@ main{
     margin-right: 270px;
     width:1550px;
     border-radius: 10px;
+    align-content: left;
 }
 .flex-container{
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;
+    margin-top: 20px;
 }
 .form-input{
     margin-top: 5px;
@@ -128,7 +129,7 @@ p{
     height: 35px;
     color: white;
     cursor:pointer;
-    /* margin-left: 35px; */
+    margin-left: 35px;
 }
 .cancel{
     margin:20px;
@@ -150,6 +151,5 @@ p{
 }
 
 .buttons{
-    display: inline;
-    align-self:left;
+   align-self: left;
 }
