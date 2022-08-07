@@ -7,56 +7,13 @@ import { useGetAllEmployeesQuery } from "../services/api";
 const EmployeeList=()=>{
 
     const { data, error, isLoading } = useGetAllEmployeesQuery();
-    // const empArr=data.data;
-
-    // const navigate = useNavigate();
-    // const displayEmployee = (id) => {
-    //     navigate(`/list/${id}`);
-    //   };
-    // const empArr =[
-    //     {
-    //         name: 'sneha',
-    //         id: 'E-433',
-    //         experience:"6",
-    //         status:"active",
-    //         joiningDate:"21/02/2016",
-    //         role:"manager",
-    //     },
-    //     {
-    //         name: 'rachel',
-    //         id: 'E-434',
-    //         experience:"2",
-    //         status:"inactive",
-    //         joiningDate:"21/02/2019",
-    //         role:"engineer",
-    //     },
-    //     {
-    //         name: 'vishal',
-    //         id: 'E-435',
-    //         experience:"1",
-    //         status:"probation",
-    //         joiningDate:"21/02/2021",
-    //         role:"hr",
-    //     },
-    //     {
-    //         name: 'neena',
-    //         id: 'E-436',
-    //         experience:"3",
-    //         status:"probation",
-    //         joiningDate:"21/02/2018",
-    //         role:"hr",
-    //     },
-    //     {
-    //         name: 'sanjali',
-    //         id: 'E-437',
-    //         experience:"4",
-    //         status:"active",
-    //         joiningDate:"21/08/2017",
-    //         role:"admin",
-    //     },
-    // ];
+    const navigate = useNavigate();
+    const displayEmployee = (id) => {
+      navigate(`/list/${id}`);
+    };
+ 
     return(
-        <div>
+        <div className="app-root">
             <SideNavigation/>
             <main>
                 <div className="heading">
@@ -107,9 +64,9 @@ const EmployeeList=()=>{
                                 role={listItem.role}
                                 status={listItem.status}
                                 experience={listItem.experience}
-                                id={listItem.id}
+                                // id={listItem.id}
                                 employee={listItem}
-                                handleClick={()=>{}}
+                                handleClick={() => displayEmployee(listItem.id)}
                                 />
                             )
                             })}

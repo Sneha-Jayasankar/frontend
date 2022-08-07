@@ -8,6 +8,7 @@
     border-radius: 4px;
     margin: 5px;
     box-shadow: #fafafa 1px 1px 1px 1px;
+    align-items: center;
 }
 
 .create-emp-span{
@@ -28,6 +29,7 @@
     cursor: pointer;
     text-decoration: none;
     color:#1F1F1F;
+    justify-content: center;
 }
 .create-emp div{
     padding: 20px;

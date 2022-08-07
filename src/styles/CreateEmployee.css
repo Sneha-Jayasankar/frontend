@@ -6,6 +6,7 @@ main{
     left: 250px;
     margin-left: 250px;
     padding: 20px;
+    /* position:fixed; */
 }
 
 .header{
@@ -109,10 +110,10 @@ select {
     color: grey;
 }
 /*error tag*/
-p{
+/* p{
     height:0.2px;
     color:red;
-}
+} */
 /*buttons*/
 
 .create {

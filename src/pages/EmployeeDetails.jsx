@@ -1,17 +1,20 @@
 import React from "react";
 import { MdOutlineEdit } from "react-icons/md";
-import "./styles/EmployeeList.css";
-import "./styles/EmployeeDetails.css";
-import fileImg from "./assets/file.png";
+// import "../styles/EmployeeList.css";
+import "../styles/EmployeeDetails.css";
 import SideNavigation from "../components/SideNavigation";
+import { Link, useParams } from "react-router-dom";
+import { useGetEmployeeQuery } from "../services/api";
 
 const EmployeeDetails = () => {
   const { id } = useParams();
   const { data, isLoading } = useGetEmployeeQuery(id);
+  // console.log("data:",data.data.name);
 
   return (
-    <div className="app">
+    <div className="employeedetail">
       <SideNavigation />
+      <main>
       <div className="emp-main">
         <div className="heading">
           <h1>Employee Details</h1>
@@ -19,56 +22,45 @@ const EmployeeDetails = () => {
             <span className="create-emp-span">
               <MdOutlineEdit />
             </span>
-            <div>Edit</div>
+            <div className="editcontent">Edit</div>
           </Link>
         </div>
         {isLoading ? (
           <div>Loading...</div>
         ) : (
           <div className="emp-details">
-            {console.log(data)}
             <div className="emp-details-column">
               <div className="emp-details-attribute">Employee Name</div>
-              <div className="emp-details-attribute">{data.name}</div>
+              <div className="emp-details-attribute">{data.data.name}</div>
             </div>
             <div className="emp-details-column">
               <div className="emp-details-attribute">Employee ID</div>
-              <div className="emp-details-attribute">{data.empId}</div>
+              <div className="emp-details-attribute">{data.data.id}</div>
             </div>
             <div className="emp-details-column">
               <div className="emp-details-attribute">Joining Date</div>
-              <div className="emp-details-attribute">{data.joiningDate}</div>
+              <div className="emp-details-attribute">{data.data.joiningdate}</div>
             </div>
             <div className="emp-details-column">
               <div className="emp-details-attribute">Role</div>
-              <div className="emp-details-attribute">{data.role}</div>
+              <div className="emp-details-attribute">{data.data.role}</div>
             </div>
             <div className="emp-details-column">
               <div className="emp-details-attribute">Status</div>
               <div
-                className={`emp-details-attribute ${data.status} span-status-detail`}
+                className={`emp-details-attribute ${data.data.status} span-status-detail`}
               >
-                {data.status}
+                {data.data.status}
               </div>
             </div>
             <div className="emp-details-column">
               <div className="emp-details-attribute">Experience</div>
-              <div className="emp-details-attribute">{data.experience}</div>
-            </div>
-            <hr style={{ width: "100%", margin: "10px" }} />
-            <div className="emp-details-column">
-              <div className="emp-details-attribute">Address</div>
-              <div className="emp-details-attribute">{data.address}</div>
-            </div>
-            <div className="emp-details-column">
-              <div className="emp-details-attribute">Employee ID Proof</div>
-              <div className="emp-details-attribute fileImg">
-                {/* <img src={fileImg}></img> */}
-              </div>
+              <div className="emp-details-attribute">{data.data.experience}</div>
             </div>
           </div>
         )}
       </div>
+      </main>
     </div>
   );
 };

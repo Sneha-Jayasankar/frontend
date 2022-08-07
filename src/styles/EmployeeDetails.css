@@ -1,8 +1,21 @@
+.main{
+    background-color: #FAFAFA;
+    height: 1550px;
+    margin-left: 250px;
+    height:3000px;
+}
+.emp_main{
+    height:1700px;
+    background-color: #FAFAFA;
+}
 .heading{
     justify-content: space-between;
+    border-radius: 5px;
 }
 .edit-emp{
-    width: 168px;
+    width: 125px;
+    margin-right: 20px ;
+    padding-right: 20px;
 }
 .emp-details{
     display: flex;
@@ -12,8 +25,8 @@
     border-radius: 5px;
     font-size: 0.8rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-   
-    width:80%;
+    margin-top: 10px;
+    width:1515px;
     flex-wrap: wrap;
 }
 .emp-details-column{

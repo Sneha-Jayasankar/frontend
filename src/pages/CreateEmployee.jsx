@@ -7,6 +7,7 @@ import '../styles/CreateEmployee.css'
 
 const CreateEmployee=({ update }) => {
 
+    const [createEmployee, { isLoading }] = useCreateEmployeeMutation();
     const [state, setState] = useState({
         name: "",
         eid: "",
