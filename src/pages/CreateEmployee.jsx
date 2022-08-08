@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Button from "../components/Button"
 import InputField from "../components/InputField"
 import InputSelect from "../components/InputSelect"
 import SideNavigation from "../components/SideNavigation"
+import { useCreateEmployeeMutation } from "../services/api"
 import '../styles/CreateEmployee.css'
 
-const CreateEmployee=({ update }) => {
+const CreateEmployee=() => {
 
-    const [createEmployee, { isLoading }] = useCreateEmployeeMutation();
+    const [createEmployee] = useCreateEmployeeMutation();
+    const navigate = useNavigate(); 
     const [state, setState] = useState({
         name: "",
-        eid: "",
-        jdate:"",
-        exp:"",
-        adr:"",
+        // empId: "",
+        joiningdate:"",
+        experience:"",
+        // adr:"",
         role:"",
         status:"",
     });
@@ -25,6 +28,22 @@ const CreateEmployee=({ update }) => {
         })
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        createEmployee(state).unwrap();
+        setState({
+          name: "",
+        //   empId: "",
+          joiningdate: "",
+          email: "",
+          experience: "",
+        //   address: "",
+        //   idProof: "",
+          role: "",
+          status: "",
+        });
+        navigate("/list");
+      };
     useEffect(()=>{
         console.log(state)
     },[state]);
@@ -34,9 +53,9 @@ const CreateEmployee=({ update }) => {
         <SideNavigation/>
         <main>
             <div className="header">
-            {update ? <h1>Update Employee</h1> : <h1>Create Employee</h1>}
+            <h1>Create Employee</h1>
             </div>
-            <form id="forms" className="form" name="form1" action="#" method="post">
+            <div id="forms" className="form" name="form1">
                 <div className="flex-container">
                      <div className="form-input">
                         <label>Employee Name</label>
@@ -45,12 +64,12 @@ const CreateEmployee=({ update }) => {
                     </div>
                     <div className="form-input">
                         <label>Employee ID</label>
-                        <InputField type="text" id="eid" placeholder="Employee Id" name="id" onChange={(value) => onChangeValue("eid", value)}/>
+                        <InputField type="text" id="eid" placeholder="Employee Id" name="id" onChange={(value) => onChangeValue("empId", value)}/>
                         <p id="error-id" className="error"></p>
                     </div>
                     <div className="form-input">
                         <label>Joining Date</label>
-                        <InputField type="text" id="jdate" placeholder="Joining Date" name="joiningdate" onChange={(value) => onChangeValue("jdate", value)}/>
+                        <InputField type="text" id="jdate" placeholder="Joining Date" name="joiningDate" onChange={(value) => onChangeValue("joiningdate", value)}/>
                         <p id="error-date" className="error"></p>
                     </div>
                     <div className="form-input">
@@ -80,7 +99,7 @@ const CreateEmployee=({ update }) => {
                     </div>
                     <div className="form-input">
                         <label>Experience</label>
-                        <InputField type="text" id="exp" placeholder="Experience" name="experience" onChange={(value) => onChangeValue("exp", value)}/>
+                        <InputField type="text" id="experience" placeholder="Experience" name="experience" onChange={(value) => onChangeValue("experience", value)}/>
                         <p id="error-experience" className="error"></p>
                     </div>
                     <div className="form-input">
@@ -97,10 +116,10 @@ const CreateEmployee=({ update }) => {
                     </div>
                 </div>
                 <div className="buttons">
-                        <Button id="createb" className="create" onclick="return validateForm()" label="Create"/>
+                        <Button id="createb" className="create" handleClick={(e) => handleSubmit(e)} label="Create"/>
                         <Button className="cancel" value="Cancel" label ="Cancel"/>    
                 </div>
-            </form>
+            </div>
         </main>
     </div>
     )

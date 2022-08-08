@@ -4,10 +4,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const employeeApi = createApi({
   reducerPath: 'employeeApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
+  tagTypes: ['employee'],
   endpoints: (builder) => ({
     //getallemployees
     getAllEmployees: builder.query({
       query: () => `employee/`,
+      providesTags: ['employee'],
     }),
     //deleteemployee
     deleteEmployee: builder.mutation({
@@ -22,10 +24,12 @@ export const employeeApi = createApi({
     }),
 
     createEmployee: builder.mutation({
-      query: () =>  ({
+      query: state =>  ({
         url: `employee/`,
-        method: 'POST'
+        method: 'POST',
+        body: state
       }),
+      invalidatesTags: ['employee'],
     }),
   }),
 })
