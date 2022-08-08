@@ -1,14 +1,19 @@
 import React from "react";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
-import { useDeleteEmployeeMutation } from "../services/api";
+import { useDeleteEmployeeMutation, useGetEmployeeQuery } from "../services/api";
 import "../styles/Entries.css";
 import Button from "./Button";
 
 const Entries = (props) => {
   const {handleClick}=props;
+  const navigate=useNavigate();
   // console.log(props)
+  const id=props.empId;
   const [deleteEmployee, { isLoading }] = useDeleteEmployeeMutation();
+  const { data } = useGetEmployeeQuery(id);
+  //delete function
   const handleDelete = (e) => {
     e.stopPropagation();
     console.log(`Delete ${props.empId}`);
@@ -16,7 +21,11 @@ const Entries = (props) => {
     alert("Selected employee has been deleted");
     window.location.reload(false);
   };
-
+//edit function
+  const handleEdit=(e)=>{
+    e.stopPropagation();
+    navigate(`/edit/${id}`);
+  }
   return (
     <div className="list-item" onClick={()=>handleClick()}>
       <div className="field">{props.name}</div>
@@ -34,18 +43,9 @@ const Entries = (props) => {
           onClick={(e) => {
             handleDelete(e);
           }}/>
-        {/* } */}
-          {/* position="center">
-          <div classname="popup">
-            <h3>Are you sure?</h3>
-            <p>Do you really want to delete employee?</p>
-            <Button className="create"label="Confirm"/>
-            <Button className="cancel" label="Cancel"/>
-          </div>
-        </Popup> */}
         <MdOutlineEdit
           className="edit-icon"
-          // onClick={()=>handleClick()}
+          onClick={(e)=>{handleEdit(e);}}
         />
       </div>
     </div>

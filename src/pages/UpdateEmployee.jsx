@@ -1,69 +1,67 @@
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import Button from "../components/Button"
-import InputField from "../components/InputField"
-import InputSelect from "../components/InputSelect"
-import SideNavigation from "../components/SideNavigation"
-import { useCreateEmployeeMutation } from "../services/api"
-import '../styles/CreateEmployee.css'
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Button from "../components/Button";
+import InputField from "../components/InputField";
+import InputSelect from "../components/InputSelect";
+import SideNavigation from "../components/SideNavigation";
+import { useGetEmployeeQuery, useUpdateEmployeeMutation } from "../services/api";
 
-const CreateEmployee=() => {
-
-    const [createEmployee] = useCreateEmployeeMutation();
+const UpdateEmployee=() => {
+    const { id } = useParams();
+    const { data, isLoading } = useGetEmployeeQuery(id);
+    const [updateEmployee] = useUpdateEmployeeMutation(id);
     const navigate = useNavigate(); 
     const [state, setState] = useState({});
-console.log("state=",state);
-    
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const newEmp = {
+        name: state.name,
+        joiningdate: state.joiningdate,
+        experience:state.experience,
+        role:state.role,
+        status:state.status,
+        address: {
+            address_line1: state.address_line1,
+            address_line2:state.address_line2,
+            city:state.city,
+            state:state.state,
+            pin:state.pin
+        }
+    }
+    // console.log("newEmp=",newEmp.name);
+    updateEmployee({id:id, state:newEmp});
+    navigate("/list");
+  };
+
     const onChangeValue = (key, value) => {
         setState({
             ...state,
             [key]: value,
         })
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newEmp = {
-            name: state.name,
-            joiningdate: state.joiningdate,
-            experience:state.experience,
-            role:state.role,
-            status:state.status,
-            address: {
-                address_line1: state.address_line1,
-                address_line2:state.address_line2,
-                city:state.city,
-                state:state.state,
-                pin:state.pin
-            }
-        }
-        console.log("state=",newEmp.status);
-    
-        createEmployee(newEmp);
-        navigate("/list");
-      };
     useEffect(()=>{
+        if(data){
         setState({
-            name: "",
-            // empId: "",
-            joiningdate:"",
-            experience:"",
-            address_line1:"",
-            address_line2:"",
-            city:"",
-            state:"",
-            pin:"",
-            role:"",
-            status:"",
-    })
-    },[]);
+            name: data.data.name,
+            joiningdate:data.data.joiningdate,
+            experience:data.data.experience,
+            address_line1:data.data.address.address_line1,
+            address_line2:data.data.address.address_line2,
+            city:data.data.address.city,
+            state:data.data.address.state,
+            pin:data.data.address.pin,
+            role:data.data.role,
+            status:data.data.status,
+    })}
+    },[data]);
 
     return(
     <div>
         <SideNavigation/>
         <main>
             <div className="header">
-            <h1>Create Employee</h1>
+            <h1>Update Employee</h1>
             </div>
             <div id="forms" className="form" name="form1">
                 <div className="flex-container">
@@ -142,7 +140,7 @@ console.log("state=",state);
                     </div>
                 </div>
                 <div className="buttons">
-                        <Button id="createb" className="create" handleClick={(e) => handleSubmit(e)} label="Create"/>
+                        <Button id="createb" className="create" handleClick={(e) => handleUpdate(e)} label="Update"/>
                         <Button className="cancel" value="Cancel" label ="Cancel"/>    
                 </div>
             </div>
@@ -151,4 +149,4 @@ console.log("state=",state);
     )
 };
 
-export default CreateEmployee;
+export default UpdateEmployee;
