@@ -57,6 +57,14 @@ const EmployeeDetails = () => {
               <div className="emp-details-attribute">Experience</div>
               <div className="emp-details-attribute">{data.data.experience}</div>
             </div>
+            <div className="emp-details-column">
+              <div className="emp-details-attribute">Address</div>
+              <div className="emp-details-attribute">{data.data.address.address_line1},</div>
+              <div className="emp-details-attribute">{data.data.address.address_line2},</div>
+              <div className="emp-details-attribute">{data.data.address.city},</div>
+              <div className="emp-details-attribute">{data.data.address.state},</div>
+              <div className="emp-details-attribute">{data.data.address.pin}</div>
+            </div>
           </div>
         )}
       </div>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function SideNavigation(){
     return(
     <div className="sidebar">
-     <Link to="/list">
+     <Link to="/list" className='atag'>
         <img src={logo} alt="KeyValue Logo" className="logo" />
       </Link>
       <nav className="employee-list">

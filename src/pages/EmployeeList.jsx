@@ -18,9 +18,11 @@ const EmployeeList=()=>{
             <main>
                 <div className="heading">
                     <h1>Employee List</h1>
+                    <div className="filterby">
+                    <p>Filterby</p>
                     <InputSelect
-                        label="Filter By"
-                        className="filterby"
+                        // label="Filter By"
+                        className="filterbycontent"
                         options={[
                         { key: 1, value: "name", name: "Employee Name" },
                         { key: 2, value: "empId", name: "Employee ID" },
@@ -30,6 +32,7 @@ const EmployeeList=()=>{
                         { key: 6, value: "experience", name: "Experience" },
                         ]}
                     />
+                    </div>
                     <Link to="/create" className="create-emp">
                         <span className="create-emp-span">+</span>
                         <div>Create Employee</div>

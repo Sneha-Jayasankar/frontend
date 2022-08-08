@@ -70,17 +70,17 @@ console.log("state=",state);
                      <div className="form-input">
                         <label>Employee Name</label>
                         <InputField type="text" id="name" placeholder="Employee Name" name="name" onChange={(value) => onChangeValue("name", value)}/>
-                        <p id="error-name" className="error"></p>
+                        {/* <p id="error-name" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Employee ID</label>
                         <InputField type="text" id="eid" placeholder="Employee Id" name="id" onChange={(value) => onChangeValue("empId", value)}/>
-                        <p id="error-id" className="error"></p>
+                        {/* <p id="error-id" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Joining Date</label>
                         <InputField type="text" id="jdate" placeholder="Joining Date" name="joiningDate" onChange={(value) => onChangeValue("joiningdate", value)}/>
-                        <p id="error-date" className="error"></p>
+                        {/* <p id="error-date" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <InputSelect
@@ -110,7 +110,7 @@ console.log("state=",state);
                     <div className="form-input">
                         <label>Experience</label>
                         <InputField type="text" id="experience" placeholder="Experience" name="experience" onChange={(value) => onChangeValue("experience", value)}/>
-                        <p id="error-experience" className="error"></p>
+                        {/* <p id="error-experience" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Address_line1</label>

@@ -1,10 +1,9 @@
 import React from "react";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import Popup from "reactjs-popup";
 import { useDeleteEmployeeMutation, useGetEmployeeQuery } from "../services/api";
 import "../styles/Entries.css";
-import Button from "./Button";
+
 
 const Entries = (props) => {
   const {handleClick}=props;
@@ -22,7 +21,7 @@ const Entries = (props) => {
     alert("Selected employee has been deleted");
     window.location.reload(false);
   };
-  
+
 //edit function
   const handleEdit=(e)=>{
     e.stopPropagation();

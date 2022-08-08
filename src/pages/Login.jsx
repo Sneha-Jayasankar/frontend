@@ -23,7 +23,7 @@ const Login = () => {
         <div className="login-part img">
           <img src={sideImg} alt="" width="940px" height="97%" />
         </div>
-        <div className="login-part form">
+        <div className="login-part-form">
           <img src={logo} alt="KeyValue Logo" width="209" height="45" />
           <div className="login-form">
       

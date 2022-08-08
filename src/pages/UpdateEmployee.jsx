@@ -67,24 +67,25 @@ const UpdateEmployee=() => {
                 <div className="flex-container">
                      <div className="form-input">
                         <label>Employee Name</label>
-                        <InputField type="text" id="name" placeholder="Employee Name" name="name" onChange={(value) => onChangeValue("name", value)}/>
-                        <p id="error-name" className="error"></p>
+                        <InputField type="text" id="name" value={state.name} placeholder="Employee Name" name="name" onChange={(value) => onChangeValue("name", value)}/>
+                        {/* <p id="error-name" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Employee ID</label>
                         <InputField type="text" id="eid" placeholder="Employee Id" name="id" onChange={(value) => onChangeValue("empId", value)}/>
-                        <p id="error-id" className="error"></p>
+                        {/* <p id="error-id" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Joining Date</label>
-                        <InputField type="text" id="jdate" placeholder="Joining Date" name="joiningDate" onChange={(value) => onChangeValue("joiningdate", value)}/>
-                        <p id="error-date" className="error"></p>
+                        <InputField type="text" id="jdate" value={state.joiningdate} placeholder="Joining Date" name="joiningDate" onChange={(value) => onChangeValue("joiningdate", value)}/>
+                        {/* <p id="error-date" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <InputSelect
                             label="Role"
                             className="select"
                             id="role"
+                            value={state.role}
                             onChange={(value) => onChangeValue("role", value)}
                             options={[
                                 {key:'engineer',value:'engineer',name:'engineer'},
@@ -97,6 +98,7 @@ const UpdateEmployee=() => {
                         <InputSelect
                             label="Status"
                             id="status"
+                            value={state.status}
                             className="select"
                             onChange={(value) => onChangeValue("status", value)}
                             options={[
@@ -107,28 +109,28 @@ const UpdateEmployee=() => {
                     </div>
                     <div className="form-input">
                         <label>Experience</label>
-                        <InputField type="text" id="experience" placeholder="Experience" name="experience" onChange={(value) => onChangeValue("experience", value)}/>
-                        <p id="error-experience" className="error"></p>
+                        <InputField type="text" id="experience" value={state.experience} placeholder="Experience" name="experience" onChange={(value) => onChangeValue("experience", value)}/>
+                        {/* <p id="error-experience" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Address_line1</label>
-                        <InputField type="text" id="address_line1" placeholder="Address line 1" onChange={(value) => onChangeValue("address_line1", value)}/>
+                        <InputField type="text" id="address_line1" value={state.address_line1} placeholder="Address line 1" onChange={(value) => onChangeValue("address_line1", value)}/>
                     </div>
                     <div className="form-input">
                         <label>Address_line1</label>
-                        <InputField type="text" id="address_line2" placeholder="Address line 2" onChange={(value) => onChangeValue("address_line2", value)}/>
+                        <InputField type="text" id="address_line2" value={state.address_line2} placeholder="Address line 2" onChange={(value) => onChangeValue("address_line2", value)}/>
                     </div>
                     <div className="form-input">
                         <label>City</label>
-                        <InputField type="text" id="city" placeholder="City" onChange={(value) => onChangeValue("city", value)}/>
+                        <InputField type="text" id="city" placeholder="City" value={state.city} onChange={(value) => onChangeValue("city", value)}/>
                     </div>
                     <div className="form-input">
                         <label>State</label>
-                        <InputField type="text" id="state" placeholder="State" onChange={(value) => onChangeValue("state", value)}/>
+                        <InputField type="text" id="state" placeholder="State"value={state.state} onChange={(value) => onChangeValue("state", value)}/>
                     </div>
                     <div className="form-input">
                         <label>Pin</label>
-                        <InputField type="text" id="pin" placeholder="Address" onChange={(value) => onChangeValue("pin", value)}/>
+                        <InputField type="text" id="pin" placeholder="Pin" value={state.pin} onChange={(value) => onChangeValue("pin", value)}/>
                     </div>
                     <div className="form-input">
                         <label htmlFor="proof">Upload ID Proof</label>

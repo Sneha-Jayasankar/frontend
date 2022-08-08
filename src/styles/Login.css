@@ -14,14 +14,15 @@
     justify-content: center;
     align-items: center;
 }
-.form{
+.login-part-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 250px;
 }
 .login-form{
-    width: 35%;
+    width: 110%;
 }
 .form img{
     margin-bottom: 20px;
