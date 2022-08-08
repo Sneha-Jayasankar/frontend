@@ -6,7 +6,6 @@ main{
     left: 250px;
     margin-left: 250px;
     padding: 20px;
-    /* position:fixed; */
 }
 
 .header{
@@ -18,7 +17,6 @@ main{
     box-shadow: 0px 3px 6px #9D9D9D29;
     border-radius: 10px;
     opacity: 1;
-    /* margin:10px; */
 }
 .header h1 {
     font-family: sans-serif;
@@ -49,9 +47,7 @@ main{
     margin-left:35px ;
     margin-bottom: 20px;
 }
-/* .error{
-    display: inline;
-} */
+
 input[type=text], 
 input[type=file],
 select {
@@ -59,7 +55,6 @@ select {
     width: 450px;
     padding: 12px 20px;
     margin-top: 10px;
-    /* margin-top: 2px; */
     border: 1px solid #ccc;
     background-color: #FAFAFA;
     border-radius: 4px;
@@ -81,7 +76,6 @@ select {
     border: 0.5px solid #cecece;
     background-color: #FAFAFA;
     transform: translateY(-10px);
-    /* transform: translateX(-20px); */
   }
 
 .browse {
@@ -93,7 +87,6 @@ select {
     height: 80%;
     border-radius: 5px;
     color: #8B8D9D;
-    /* padding: 5px; */
     display: flex; 
      align-items: center; 
     justify-content: center;
@@ -110,11 +103,7 @@ select {
 .select{
     color: grey;
 }
-/*error tag*/
-/* p{
-    height:0.2px;
-    color:red;
-} */
+
 /*buttons*/
 
 .create {

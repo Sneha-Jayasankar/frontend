@@ -20,14 +20,12 @@ aside{
 .employee-list{
     background-color: rgb(0, 162, 255);
     padding: 10px;
-    /* align-items: center; */
     text-decoration: none;
     border-top-left-radius: 90px 90px;
     border-bottom-left-radius: 90px 90px;
      margin-left: 10px;
     margin-top: 20px; 
     width: 219px;
-    /* align-content: center; */
    
 }
 .employee-list-content{

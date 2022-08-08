@@ -29,7 +29,6 @@ const UpdateEmployee=() => {
             pin:state.pin
         }
     }
-    // console.log("newEmp=",newEmp.name);
     updateEmployee({id:id, state:newEmp});
     navigate("/list");
   };
@@ -68,17 +67,14 @@ const UpdateEmployee=() => {
                      <div className="form-input">
                         <label>Employee Name</label>
                         <InputField type="text" id="name" value={state.name} placeholder="Employee Name" name="name" onChange={(value) => onChangeValue("name", value)}/>
-                        {/* <p id="error-name" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Employee ID</label>
                         <InputField type="text" id="eid" placeholder="Employee Id" name="id" onChange={(value) => onChangeValue("empId", value)}/>
-                        {/* <p id="error-id" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Joining Date</label>
                         <InputField type="text" id="jdate" value={state.joiningdate} placeholder="Joining Date" name="joiningDate" onChange={(value) => onChangeValue("joiningdate", value)}/>
-                        {/* <p id="error-date" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <InputSelect
@@ -110,7 +106,6 @@ const UpdateEmployee=() => {
                     <div className="form-input">
                         <label>Experience</label>
                         <InputField type="text" id="experience" value={state.experience} placeholder="Experience" name="experience" onChange={(value) => onChangeValue("experience", value)}/>
-                        {/* <p id="error-experience" className="error"></p> */}
                     </div>
                     <div className="form-input">
                         <label>Address_line1</label>

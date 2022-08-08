@@ -21,7 +21,6 @@ const EmployeeList=()=>{
                     <div className="filterby">
                     <p>Filterby</p>
                     <InputSelect
-                        // label="Filter By"
                         className="filterbycontent"
                         options={[
                         { key: 1, value: "name", name: "Employee Name" },
@@ -58,7 +57,6 @@ const EmployeeList=()=>{
                          ) : data ? (
                             <>
                         {data.data.map((listItem) => {
-                            // console.log("console.log",listItem.name);
                             return(
                             <Entries
                                 name={listItem.name}
@@ -67,7 +65,6 @@ const EmployeeList=()=>{
                                 role={listItem.role}
                                 status={listItem.status}
                                 experience={listItem.experience}
-                                // id={listItem.id}
                                 employee={listItem}
                                 handleClick={() => displayEmployee(listItem.id)}
                                 />
