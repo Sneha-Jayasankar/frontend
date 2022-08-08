@@ -13,6 +13,7 @@ const Entries = (props) => {
   const id=props.empId;
   const [deleteEmployee, { isLoading }] = useDeleteEmployeeMutation();
   const { data } = useGetEmployeeQuery(id);
+
   //delete function
   const handleDelete = (e) => {
     e.stopPropagation();
@@ -21,6 +22,7 @@ const Entries = (props) => {
     alert("Selected employee has been deleted");
     window.location.reload(false);
   };
+  
 //edit function
   const handleEdit=(e)=>{
     e.stopPropagation();

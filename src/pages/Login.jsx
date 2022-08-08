@@ -21,16 +21,17 @@ const Login = () => {
     <>
       <div className="login-page">
         <div className="login-part img">
-          <img src={sideImg} alt="" width="97%" height="97%" />
+          <img src={sideImg} alt="" width="940px" height="97%" />
         </div>
         <div className="login-part form">
           <img src={logo} alt="KeyValue Logo" width="209" height="45" />
           <div className="login-form">
+      
             <InputField
               label=""
-              type="text"
-              placeholder="Username"
-              name="username"
+              type="password"
+              placeholder="User name"
+              name="Username"
               onChange={onChange}
             />
             <InputField
