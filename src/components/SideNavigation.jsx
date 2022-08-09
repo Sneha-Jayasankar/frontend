@@ -1,9 +1,17 @@
 import '../styles/SideNavigation.css';
 import logo from '../images/kv-logo.png';
 import list from "../images/List.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {removeStorage} from "../services/utils";
+import Button from './Button';
 
 function SideNavigation(){
+
+    const navigate = useNavigate(); 
+    const handlelogout =() =>{
+      removeStorage("idToken");
+      navigate("/");
+    }
     return(
     <div className="sidebar">
      <Link to="/list">
@@ -17,7 +25,10 @@ function SideNavigation(){
           </div>
         </Link>
       </nav>
-    </div>
+      <div className='logoutbutton'>
+        <Button id="createb" className="create" handleClick={() => handlelogout()} label="Logout"/>
+      </div>
+    </div>  
     )
 }
 
