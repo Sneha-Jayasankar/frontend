@@ -1,22 +1,63 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
 import "../styles/Login.css";
 import logo from "../images/kv-logo.png";
 import sideImg from "../images/large-image.png";
+import { useLoginMutation } from "../services/api";
+import {setStorage} from "../services/utils";
+/*credentials for login:
+admin:
+username: sneha123
+password: sneha123
+
+general:
+username: joel123
+password:joel123
+*/
 
 const Login = () => {
-  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
-  const onChange = (name, value) => {
-    console.log(name, value);
+
+  const [login]=useLoginMutation();
+  const [loginInfo, setLoginInfo] = useState({});
+  const navigate = useNavigate();
+
+  const onChangeValue = (key, value) => {
     setLoginInfo((prev) => {
       console.log(prev);
-      return { ...prev, [name]: value };
+      return { ...prev, [key]: value };
+    });
+    console.log(key, value);
+
+    setLoginInfo({
+      ...loginInfo,
+      [key]: value,
     });
   };
-  const navigate = useNavigate();
+
+  const handleLogin = async() => {
+    const newlogin = {
+        username: loginInfo.username,
+        password:loginInfo.password
+    }
+    const response=await login(newlogin);
+    const token=response.data.data.idToken;
+    setStorage("idToken",token)
+    console.log(response);
+
+    navigate("/list");
+  };
+  // useEffect(()=>{
+  //   // setLoginInfo({
+  //   //     username: "",
+  //   //     password:""
+  //   //     })
+    
+  //       },[]);
+
+
   return (
     <>
       <div className="login-page">
@@ -29,26 +70,28 @@ const Login = () => {
       
             <InputField
               label=""
-              type="password"
+              className="username"
+              type="text"
+              name="username"
               placeholder="User name"
-              name="Username"
-              onChange={onChange}
+              onChange={(value) => onChangeValue("username", value)}
             />
             <InputField
               label=""
-              type="password"
+              type="text"
+              value={loginInfo.password}
               placeholder="Password"
               name="password"
-              onChange={onChange}
+              onChange={(value) => onChangeValue("password", value)}
             />
 
             <Button
               label="Login In"
               className="loginb"
-              handleClick={() => navigate("/list")}
+              handleClick={() => handleLogin()}
             />
           </div>
-          {console.log(loginInfo)}
+          {/* {console.log("logininfo",loginInfo)} */}
         </div>
       </div>
     </>
