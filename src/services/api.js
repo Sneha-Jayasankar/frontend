@@ -1,9 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { getStorage } from './utils'
 
 // Define a service using a base URL and expected endpoints
 export const employeeApi = createApi({
   reducerPath: 'employeeApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/',prepareHeaders: (headers) => {
+    const token = getStorage("idToken");
+    if (token) {
+      headers.set('Authorization', `Bearer ${token}`)
+    }
+    return headers;
+  }, }),
+  
   refetchOnMountOrArgChange:true,
   tagTypes: ['employee'],
   endpoints: (builder) => ({
@@ -42,8 +50,20 @@ export const employeeApi = createApi({
       }),
       invalidatesTags: ['employee'],
     }),
+
+    //login
+    login: builder.mutation({
+      query:loginvariable=>{
+        console.log(loginvariable)
+        return({
+          url: `employee/login`,
+          method: 'POST',
+          body:loginvariable,
+          })
+      },
+    })
   }),
 })
 
-export const { useGetAllEmployeesQuery, useGetEmployeeQuery, useDeleteEmployeeMutation, useCreateEmployeeMutation, useUpdateEmployeeMutation} = employeeApi
+export const { useGetAllEmployeesQuery, useGetEmployeeQuery, useDeleteEmployeeMutation, useCreateEmployeeMutation, useUpdateEmployeeMutation,useLoginMutation} = employeeApi
 
