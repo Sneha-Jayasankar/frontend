@@ -1,9 +1,9 @@
 import React from "react";
 import { MdOutlineEdit } from "react-icons/md";
-import "../styles/EmployeeDetails.css";
-import SideNavigation from "../components/SideNavigation";
+import "./EmployeeDetails.css";
 import { Link, useParams } from "react-router-dom";
-import { useGetEmployeeQuery } from "../services/api";
+import { useGetEmployeeQuery } from "../../services/api";
+import SideNavigation from "../../components/sidenavigation/SideNavigation";
 
 const EmployeeDetails = () => {
   const { id } = useParams();

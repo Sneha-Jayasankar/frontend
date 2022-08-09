@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import InputSelect from "../components/InputSelect";
-import SideNavigation from "../components/SideNavigation";
-import '../styles/EmployeeList.css'
-import Entries from "../components/Entries";
-import { useGetAllEmployeesQuery } from "../services/api";
+import InputSelect from "../../components/InputSelect";
+import './EmployeeList.css'
+import { useGetAllEmployeesQuery } from "../../services/api";
+import SideNavigation from "../../components/sidenavigation/SideNavigation";
+import Entries from "../../components/entries/Entries";
 const EmployeeList=()=>{
 
     const { data, error, isLoading } = useGetAllEmployeesQuery();

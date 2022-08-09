@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Button from "../components/Button";
-import InputField from "../components/InputField";
-import InputSelect from "../components/InputSelect";
-import SideNavigation from "../components/SideNavigation";
-import { useGetEmployeeQuery, useUpdateEmployeeMutation } from "../services/api";
+import Button from "../../components/Button";
+import InputField from "../../components/InputField";
+import InputSelect from "../../components/InputSelect";
+import SideNavigation from "../../components/sidenavigation/SideNavigation";
+import { useGetEmployeeQuery, useUpdateEmployeeMutation } from "../../services/api";
 
 const UpdateEmployee=() => {
     const { id } = useParams();

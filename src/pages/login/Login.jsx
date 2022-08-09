@@ -1,13 +1,13 @@
 
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
-import InputField from "../components/InputField";
-import "../styles/Login.css";
-import logo from "../images/kv-logo.png";
-import sideImg from "../images/large-image.png";
-import { useLoginMutation } from "../services/api";
-import {setStorage} from "../services/utils";
+import "./Login.css";
+import logo from "/home/sneha/Desktop/frontend-folder/reactapp/src/images/kv-logo.png";
+import sideImg from "/home/sneha/Desktop/frontend-folder/reactapp/src/images/large-image.png";
+import { useLoginMutation } from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
+import {setStorage} from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/utils.js";
+import InputField from "../../components/InputField";
+import Button from "../../components/Button";
 /*credentials for login:
 admin:
 username: sneha123
@@ -49,14 +49,6 @@ const Login = () => {
 
     navigate("/list");
   };
-  // useEffect(()=>{
-  //   // setLoginInfo({
-  //   //     username: "",
-  //   //     password:""
-  //   //     })
-    
-  //       },[]);
-
 
   return (
     <>

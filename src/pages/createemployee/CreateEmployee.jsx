@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Button from "../components/Button"
-import InputField from "../components/InputField"
-import InputSelect from "../components/InputSelect"
-import SideNavigation from "../components/SideNavigation"
-import { useCreateEmployeeMutation } from "../services/api"
-import '../styles/CreateEmployee.css'
+import Button from "../../components/Button"
+import InputField from "../../components/InputField"
+import InputSelect from "../../components/InputSelect"
+import SideNavigation from "../../components/sidenavigation/SideNavigation"
+import { useCreateEmployeeMutation } from "../../services/api"
+import './CreateEmployee.css'
 
 const CreateEmployee=() => {
 

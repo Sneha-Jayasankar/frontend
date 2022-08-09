@@ -1,8 +1,8 @@
 import React from "react";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { useDeleteEmployeeMutation, useGetEmployeeQuery } from "../services/api";
-import "../styles/Entries.css";
+import { useDeleteEmployeeMutation} from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
+import "./Entries.css";
 
 
 const Entries = (props) => {
@@ -10,8 +10,8 @@ const Entries = (props) => {
   const navigate=useNavigate();
   // console.log(props)
   const id=props.empId;
-  const [deleteEmployee, { isLoading }] = useDeleteEmployeeMutation();
-  const { data } = useGetEmployeeQuery(id);
+  const [deleteEmployee] = useDeleteEmployeeMutation();
+  // const { data } = useGetEmployeeQuery(id);
 
   //delete function
   const handleDelete = (e) => {

@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CreateEmployee from './pages/CreateEmployee';
-import EmployeeList from './pages/EmployeeList';
-import Login from './pages/Login';
 import { store } from './store/Store'
 import { Provider } from 'react-redux'
-import EmployeeDetails from './pages/EmployeeDetails';
-import UpdateEmployee from './pages/UpdateEmployee';
+import CreateEmployee from './pages/createemployee/CreateEmployee';
+import EmployeeList from './pages/employeelist/EmployeeList';
+import EmployeeDetails from './pages/employeedetails/EmployeeDetails';
+import UpdateEmployee from './pages/createemployee/UpdateEmployee';
+import Login from './pages/login/Login';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,9 +1,9 @@
-import '../styles/SideNavigation.css';
-import logo from '../images/kv-logo.png';
-import list from "../images/List.png";
+import './SideNavigation.css';
+import logo from '/home/sneha/Desktop/frontend-folder/reactapp/src/images/kv-logo.png';
+import list from "/home/sneha/Desktop/frontend-folder/reactapp/src/images/List.png";
 import { Link, useNavigate } from 'react-router-dom';
-import {removeStorage} from "../services/utils";
-import Button from './Button';
+import {removeStorage} from "../../services/utils";
+import Button from '../Button';
 
 function SideNavigation(){
 
