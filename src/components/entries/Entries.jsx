@@ -1,7 +1,8 @@
 import React from "react";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { useDeleteEmployeeMutation} from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
+import { useDeleteEmployeeMutation } from "./DeleteEmployeeApi";
+// import { useDeleteEmployeeMutation} from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
 import "./Entries.css";
 
 

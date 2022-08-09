@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import InputSelect from "../../components/InputSelect";
 import './EmployeeList.css'
-import { useGetAllEmployeesQuery } from "../../services/api";
+// import { useGetAllEmployeesQuery } from "../../services/api";
 import SideNavigation from "../../components/sidenavigation/SideNavigation";
 import Entries from "../../components/entries/Entries";
+import { useGetAllEmployeesQuery } from "./EmployeeListApi";
 const EmployeeList=()=>{
 
     const { data, error, isLoading } = useGetAllEmployeesQuery();

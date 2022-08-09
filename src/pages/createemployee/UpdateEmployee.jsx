@@ -4,11 +4,13 @@ import Button from "../../components/Button";
 import InputField from "../../components/InputField";
 import InputSelect from "../../components/InputSelect";
 import SideNavigation from "../../components/sidenavigation/SideNavigation";
-import { useGetEmployeeQuery, useUpdateEmployeeMutation } from "../../services/api";
+import { useGetEmployeeQuery } from "../employeedetails/EmployeeDetailsApi";
+import { useUpdateEmployeeMutation } from "./UpdateEmployeeApi";
+
 
 const UpdateEmployee=() => {
     const { id } = useParams();
-    const { data, isLoading } = useGetEmployeeQuery(id);
+    const { data } = useGetEmployeeQuery(id);
     const [updateEmployee] = useUpdateEmployeeMutation(id);
     const navigate = useNavigate(); 
     const [state, setState] = useState({});

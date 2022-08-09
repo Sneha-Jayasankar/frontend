@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "/home/sneha/Desktop/frontend-folder/reactapp/src/images/kv-logo.png";
 import sideImg from "/home/sneha/Desktop/frontend-folder/reactapp/src/images/large-image.png";
-import { useLoginMutation } from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
+// import { useLoginMutation } from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/api.js";
 import {setStorage} from "/home/sneha/Desktop/frontend-folder/reactapp/src/services/utils.js";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
+import { useLoginMutation } from "./LoginApi";
 /*credentials for login:
 admin:
 username: sneha123

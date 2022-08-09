@@ -4,8 +4,8 @@ import Button from "../../components/Button"
 import InputField from "../../components/InputField"
 import InputSelect from "../../components/InputSelect"
 import SideNavigation from "../../components/sidenavigation/SideNavigation"
-import { useCreateEmployeeMutation } from "../../services/api"
 import './CreateEmployee.css'
+import { useCreateEmployeeMutation } from "./CreateEmployeeApi"
 
 const CreateEmployee=() => {
 
